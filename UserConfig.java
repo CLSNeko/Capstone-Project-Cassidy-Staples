@@ -14,7 +14,7 @@ public class UserConfig {
 				return args -> {
 						User marie = new User(1, "marieInu", "password123", "marie.robinlace@gmail.com");
 						User dave = new User(2, "it_dave", "admin456", "dave.roberts@yahoo.com");
-
+						repository.saveAll(List.of(marie, dave));
 				};
 		}
 }
