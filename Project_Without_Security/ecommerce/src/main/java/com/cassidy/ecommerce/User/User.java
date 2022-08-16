@@ -2,13 +2,14 @@ package com.cassidy.ecommerce.User;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @AllArgsConstructor
 @Data
@@ -17,16 +18,16 @@ import lombok.Setter;
 @Table(name = "User")
 public class User {
 
-		@Id
+		@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 		@Column(name = "userId")
-		private @Setter int userId;
+		private int userId;
 
 		@Column(name = "username")
-		private @Setter String username;
+		private String username;
 
 		@Column(name = "password")
-		private @Setter String password;
+		private String password;
 
 		@Column(name = "email")
-		private @Setter String email;
+		private String email;
 }
