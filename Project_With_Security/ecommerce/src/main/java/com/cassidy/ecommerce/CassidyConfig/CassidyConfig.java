@@ -28,6 +28,7 @@ public class CassidyConfig extends WebSecurityConfigurerAdapter{
 				.antMatchers("/user").hasAnyRole("ADMIN","USER")
 				.antMatchers("/").permitAll()
 				.and().formLogin();
+				http.csrf().disable();
 		}
 		@Bean
 		public PasswordEncoder getPasswordEncoder() {
