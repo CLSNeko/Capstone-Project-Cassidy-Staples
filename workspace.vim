@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/HCL_Work_Folder/Capstone-Project-Cassidy-Staples/Project_With_Security/ecommerce/src/main/java/com/cassidy/ecommerce/Email
+cd ~/HCL_Work_Folder/Capstone-Project-Cassidy-Staples/Spring_Boot_Backend/ecommerce
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,22 +13,44 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +0 EmailController.java
-badd +0 EmailDetails.java
-badd +0 EmailService.java
-badd +0 EmailServiceImpl.java
-badd +0 ~/vimwiki/index.md
+badd +1 pom.xml
+badd +12 src/main/java/com/cassidy/ecommerce/User/User.java
+badd +1 src/main/java/com/cassidy/ecommerce/HomeControler/HomeController.java
+badd +1 src/main/java/com/cassidy/ecommerce/Role/Role.java
+badd +43 src/main/java/com/cassidy/ecommerce/Model/User.java
+badd +3 src/main/java/com/cassidy/ecommerce/Model/Role.java
+badd +0 src/main/java/com/cassidy/ecommerce/Repository/UserRepository.java
 argglobal
 %argdel
-$argadd EmailController.java
+$argadd pom.xml
 set stal=2
 tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
-tabnew +setlocal\ bufhidden=wipe
 tabrewind
-edit EmailController.java
+edit pom.xml
 argglobal
+balt src/main/java/com/cassidy/ecommerce/HomeControler/HomeController.java
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 7 - ((6 * winheight(0) + 16) / 32)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 7
+normal! 0
+tabnext
+edit src/main/java/com/cassidy/ecommerce/Repository/UserRepository.java
+argglobal
+balt src/main/java/com/cassidy/ecommerce/Repository/UserRepository.java
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -46,9 +68,9 @@ normal! zt
 keepjumps 1
 normal! 0
 tabnext
-edit EmailServiceImpl.java
+edit src/main/java/com/cassidy/ecommerce/Model/Role.java
 argglobal
-balt EmailServiceImpl.java
+balt src/main/java/com/cassidy/ecommerce/Model/Role.java
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -59,16 +81,16 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 16) / 32)
+let s:l = 26 - ((25 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 26
 normal! 0
 tabnext
-edit EmailService.java
+edit src/main/java/com/cassidy/ecommerce/Model/User.java
 argglobal
-balt EmailService.java
+balt src/main/java/com/cassidy/ecommerce/Model/User.java
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -79,53 +101,13 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 16) / 32)
+let s:l = 40 - ((27 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 0
-tabnext
-edit EmailDetails.java
-argglobal
-balt EmailDetails.java
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 16) / 32)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 0
-tabnext
-edit ~/vimwiki/index.md
-argglobal
-balt EmailDetails.java
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 16) / 32)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 0
-tabnext 1
+keepjumps 40
+normal! 013|
+tabnext 2
 set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
