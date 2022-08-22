@@ -19,11 +19,17 @@ badd +1 src/main/java/com/cassidy/ecommerce/HomeControler/HomeController.java
 badd +1 src/main/java/com/cassidy/ecommerce/Role/Role.java
 badd +43 src/main/java/com/cassidy/ecommerce/Model/User.java
 badd +3 src/main/java/com/cassidy/ecommerce/Model/Role.java
-badd +0 src/main/java/com/cassidy/ecommerce/Repository/UserRepository.java
+badd +1 src/main/java/com/cassidy/ecommerce/Repository/UserRepository.java
+badd +32 src/main/java/com/cassidy/ecommerce/Service/UserDetailsServiceImpl.java
+badd +36 src/main/java/com/cassidy/ecommerce/Service/SecurityServiceImpl.java
+badd +1 src/main/java/com/cassidy/ecommerce/Service/SecurityService.java
 argglobal
 %argdel
 $argadd pom.xml
 set stal=2
+tabnew +setlocal\ bufhidden=wipe
+tabnew +setlocal\ bufhidden=wipe
+tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
 tabnew +setlocal\ bufhidden=wipe
@@ -50,7 +56,6 @@ normal! 0
 tabnext
 edit src/main/java/com/cassidy/ecommerce/Repository/UserRepository.java
 argglobal
-balt src/main/java/com/cassidy/ecommerce/Repository/UserRepository.java
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -68,9 +73,66 @@ normal! zt
 keepjumps 1
 normal! 0
 tabnext
+edit src/main/java/com/cassidy/ecommerce/Service/UserDetailsServiceImpl.java
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 33 - ((30 * winheight(0) + 16) / 32)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 33
+normal! 09|
+tabnext
+edit src/main/java/com/cassidy/ecommerce/Service/SecurityServiceImpl.java
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 37 - ((31 * winheight(0) + 16) / 32)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 37
+normal! 08|
+tabnext
+edit src/main/java/com/cassidy/ecommerce/Service/SecurityService.java
+argglobal
+balt src/main/java/com/cassidy/ecommerce/Service/SecurityService.java
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 7 - ((6 * winheight(0) + 16) / 32)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 7
+normal! 0
+tabnext
 edit src/main/java/com/cassidy/ecommerce/Model/Role.java
 argglobal
-balt src/main/java/com/cassidy/ecommerce/Model/Role.java
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -90,7 +152,6 @@ normal! 0
 tabnext
 edit src/main/java/com/cassidy/ecommerce/Model/User.java
 argglobal
-balt src/main/java/com/cassidy/ecommerce/Model/User.java
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -101,13 +162,13 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 40 - ((27 * winheight(0) + 16) / 32)
+let s:l = 43 - ((30 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 40
+keepjumps 43
 normal! 013|
-tabnext 2
+tabnext 3
 set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
