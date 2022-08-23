@@ -43,6 +43,5 @@ public class User {
 				   inverseJoinColumns = @JoinColumn(name = "roleId"))
 		private Set roles;
 
-		@Transient
-		private transient String passwordConfirm;
+		@Transient private String passwordConfirm;
 }

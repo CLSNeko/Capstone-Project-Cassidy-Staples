@@ -35,11 +35,25 @@ public class UserController {
 				userValidator.validate(userForm, bindingResult);
 
 				if (bindingResult.hasErrors()) {
-						return "registration"
+						return "registration";
 				}
 
 				userService.save(userForm);
 
-				securityService.autoLogin(userForm.getUsername(), userForm.getPassword());
+				securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
+
+				return "redirect:/welcome";
+		}
+
+		@RequestMapping(value = "/login", method = RequestMethod.GET)
+		public String login(Model model, String error, String logout) {
+				if (error != null) model.addAttribute("error", "Your Username or Password is Invalid.");
+				if (logout != null) model.addAttribute("message", "You have logged out successfully.");
+				return "login";
+		}
+
+		@RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
+		public String welcome(Model model) {
+				return "welcome";
 		}
 }
