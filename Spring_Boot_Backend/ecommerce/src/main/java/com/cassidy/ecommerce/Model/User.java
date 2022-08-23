@@ -41,7 +41,7 @@ public class User {
 		@JoinTable(name="User_roles",
 				   joinColumns = @JoinColumn(name = "userId"),
 				   inverseJoinColumns = @JoinColumn(name = "roleId"))
-		private Set roles;
+		private Set<Role> roles;
 
 		@Transient private String passwordConfirm;
 }
